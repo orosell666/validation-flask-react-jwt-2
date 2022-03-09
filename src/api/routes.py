@@ -38,3 +38,19 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+    
+# añadir usuario
+
+#@api.route('/user', methods=['POST'])
+#def add_user():
+ #   data = request.json
+ #    name= data.get('name')
+  #      email = data.get('email')
+ #       role = data.get('role')
+ #       if not name or not email or not password or not role:
+ #           return jsonify({"message": "es necesario (name, email, password y role"}), 401
+ #    password = data.get('password')
+
+  #          user = User(name=name, email=email,  password=password, role=role)
+
+ #   return jsonify(data), 200
