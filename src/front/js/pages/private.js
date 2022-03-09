@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css";
 
 export const Private = () => {
   const { store, actions } = useContext(Context);
@@ -14,14 +15,14 @@ export const Private = () => {
 
   return (
     <div>
-      <div className="mx-auto">
+      <div>
         <div className="text-center">
           <h1>Private Area</h1>
         </div>
       </div>
-      <div className="mx-auto">
+      <div>
         <button
-          className="btn btn-info btn-lg"
+          className="btn btn-primary col-4"
           onClick={() => {
             localStorage.removeItem("token");
             history.push("/");

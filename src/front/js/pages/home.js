@@ -8,8 +8,8 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="mx-auto">
-      <div className="text-center col-4 mt-5">
+    <div className="container">
+      <div className="text-center  mt-5">
         <Login />
       </div>
     </div>

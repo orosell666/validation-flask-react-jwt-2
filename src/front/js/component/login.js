@@ -34,29 +34,29 @@ const Login = () => {
 
   function sideIn() {}
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email </label>
+        <div>
           <input
             autoFocus
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
           />
         </div>
 
         <button
           type="submit"
-          className="btn btn-dark mt-30,block"
+          className="btn btn-dark mt-3 "
           disabled={!validateForm()}
         >
           Submit
