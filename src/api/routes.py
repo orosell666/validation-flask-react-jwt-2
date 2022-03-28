@@ -14,10 +14,13 @@ api = Blueprint('api', __name__)
 def login():
     email = request.json.get('email')
     password = request.json.get('password')
-    print("@@@@@@@ llega aqui")
+    print("@@@@@@@@@@@@@@@@@@ llega aqui")
+    print(email)
+    print(password)
     user = User.query.filter_by(email=email, password=password).first()
     if not user:
-        return jsonify({"mensaje":"El usuario no fue encontrado"}), 402
+        return jsonify({"message":"El usuario no fue encontrado",
+        "color": "danger"}), 402
     
     token = create_access_token(identity=user.id)
 
@@ -25,7 +28,9 @@ def login():
         "status": True,
         "token": token,
         "email": user.email,
-        "userID": user.id
+        "userID": user.id,
+        "message": "conseguido!",
+        "color": "success"
     }
     return jsonify(data_response), 200
 
