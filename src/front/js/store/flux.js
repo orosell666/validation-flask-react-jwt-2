@@ -25,6 +25,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("Error loading message from backend", error));
 			},
 
+			generateRegister: (user) => {
+				fetch(process.env.BACKEND_URL + "/api/signup", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(user),
+				})
+					.then(res => resp.json())
+					.then(data => setStore({ datosUsuario: data }))
+					.catch(error => console.log("Error loading message from backend", error));
+			}
+
 		}
 	};
 };
