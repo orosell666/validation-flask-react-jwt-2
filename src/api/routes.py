@@ -34,24 +34,24 @@ def login():
     }
     return jsonify(data_response), 200
 
-#@api.route('/signup', methods=['POST'])
-#def signup():
-#    email = request.json.get('email')
-#    password = request.json.get('password')
-# #   name = request.json.get('name')
-#    lastName = request.json.get('lastName')
-#
-#    user = User (email = email , password = password , name = name , lastName = lastName)
-#    db.session.add(user)
- #   db.session.commit()
-#
-#    data_response= {
-   #     "email": user.email,#
-   #     "password": user.password,
-   #     "name": user.name,
-   #     "lastName": user.lastName
-   # }
-   # return jsonify((data_response))
+@api.route('/signup', methods=['POST'])
+def signup():
+    email = request.json.get('email')
+    password = request.json.get('password')
+    name = request.json.get('name')
+    lastName = request.json.get('lastName')
+
+    user = User (email = email , password = password , name = name , lastName = lastName)
+    db.session.add(user)
+    db.session.commit()
+
+    data_response= {
+        "email": user.email,
+        "password": user.password,
+        "name": user.name,
+        "lastName": user.lastName
+    }
+    return jsonify((data_response)), 200
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -62,18 +62,18 @@ def handle_hello():
 
     return jsonify(response_body), 200
     
-#añadir usuario
+# añadir usuario
 
-@api.route('/user', methods=['POST'])
-def add_user():
-    data = request.json
-    name= data.get('name')
-    email = data.get('email')
-    role = data.get('role')
-    if not name or not email or not password or not role:
-            return jsonify({"message": "es necesario (name, email, password y role"}), 401
-    password = data.get('password')
+#@api.route('/user', methods=['POST'])
+#def add_user():
+ #   data = request.json
+ #    name= data.get('name')
+  #      email = data.get('email')
+ #       role = data.get('role')
+ #       if not name or not email or not password or not role:
+ #           return jsonify({"message": "es necesario (name, email, password y role"}), 401
+ #    password = data.get('password')
 
-    user = User(name=name, email=email,  password=password, role=role)
+  #          user = User(name=name, email=email,  password=password, role=role)
 
-    return jsonify(data), 200
+ #   return jsonify(data), 200
