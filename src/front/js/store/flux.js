@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// fetching data from the backend
 				console.log(email, password);
 
-				fetch(process.env.BACKEND_URL + "/api/token", {
+				fetch(process.env.BACKEND_URL + "/api/login", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({ email: email, password: password }),

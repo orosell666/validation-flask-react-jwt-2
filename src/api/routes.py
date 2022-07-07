@@ -10,7 +10,7 @@ from flask_jwt_extended import jwt_required, create_access_token, jwt_required, 
 api = Blueprint('api', __name__)
 
 #esta funcion es la que me crea el token
-@api.route('/token', methods=['POST'])
+@api.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email')
     password = request.json.get('password')
