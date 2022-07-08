@@ -24,15 +24,22 @@ def login():
     
     token = create_access_token(identity=user.id)
 
-    data_response = {
+    #data_response = {
+     #   "status": True,
+     #   "token": token,
+     #   "email": user.email,
+     #   "userID": user.id,
+     #   "message": "conseguido!",
+     #   "color": "success"
+    #}
+    return jsonify ({ 
         "status": True,
         "token": token,
         "email": user.email,
         "userID": user.id,
         "message": "conseguido!",
         "color": "success"
-    }
-    return jsonify(data_response), 200
+        }), 200
 
 @api.route('/signup', methods=['POST'])
 def signup():

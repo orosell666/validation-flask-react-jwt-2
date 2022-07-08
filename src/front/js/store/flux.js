@@ -19,9 +19,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify({ email: email, password: password }),
 				})
 					.then(resp => resp.json())
-					.then(data => setStore({ respuesta: data }),
+					.then(data => {
+						console.log(data)
 						localStorage.setItem("token", data.token),
-						localStorage.setItem("user_id", data.user_id))
+							localStorage.setItem("user_id", data.user_id),
+							setStore({ respuesta: data });
+					})
+
 					.catch(error => console.log("Error loading message from backend", error));
 			},
 
