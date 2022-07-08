@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify(user),
 				})
-					.then(res => resp.json())
+					.then(res => res.json())
 					.then(data => setStore({ datosUsuario: data }))
 					.catch(error => console.log("Error loading message from backend", error));
 			}

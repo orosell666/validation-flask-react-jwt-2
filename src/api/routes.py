@@ -46,9 +46,9 @@ def signup():
     email = request.json.get('email')
     password = request.json.get('password')
     name = request.json.get('name')
-    lastName = request.json.get('lastName')
+    last_name = request.json.get('lastName')
 
-    user = User (email = email , password = password , name = name , lastName = lastName)
+    user = User (email = email , password = password , name = name , last_name = last_name)
     db.session.add(user)
     db.session.commit()
 
@@ -56,7 +56,7 @@ def signup():
         "email": user.email,
         "password": user.password,
         "name": user.name,
-        "lastName": user.lastName
+        "last_name": user.last_name
     }
     return jsonify((data_response)), 200
 

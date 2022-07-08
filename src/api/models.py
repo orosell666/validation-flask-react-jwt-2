@@ -8,7 +8,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     name = db.Column(db.String(30), unique=False, nullable=True)
     last_name = db.Column(db.String(80), unique=False, nullable=True)
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    is_active = db.Column(db.Boolean(), unique=False, nullable=True)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -18,6 +18,6 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            "lastName": self.lastName
+            "lastName": self.last_name
             # do not serialize the password, its a security breach
         }

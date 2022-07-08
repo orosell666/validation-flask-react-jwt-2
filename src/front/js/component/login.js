@@ -49,7 +49,7 @@ const Login = () => {
           //disabled={!validateForm()}
           onClick={() => {
             actions.generateToken(email, password)
-
+            if (store.respuesta.token) history.push("/private")
           }}
         >
           Submit
