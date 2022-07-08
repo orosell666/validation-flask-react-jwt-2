@@ -21,8 +21,10 @@ const Login = () => {
   return (
     <div className="container">
       <form>
-        <div>
+        <div >
+          <label htmlFor="formGroupExampleInput" className="form-label text">Email</label><br />
           <input
+            className="col-2"
             autoFocus
             type="email"
             value={email}
@@ -30,8 +32,10 @@ const Login = () => {
             placeholder="Email"
           />
         </div>
-        <div className="form-group">
+        <div className="form-group ">
+          <label htmlFor="formGroupExampleInput" className="form-label text mt-2">Password</label><br />
           <input
+            className="col-2"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -41,7 +45,7 @@ const Login = () => {
 
         <button
           type="button"
-          className="btn btn-dark mt-3 "
+          className="btn btn-primary col-2 mt-3 "
           //disabled={!validateForm()}
           onClick={() => {
             actions.generateToken(email, password)

@@ -8,21 +8,20 @@ export const Private = () => {
   let history = useHistory();
   useEffect(() => {
     let token = localStorage.getItem("token");
-    if (!token) {
-      history.push("/");
-    }
+
   });
 
   return (
     <div>
       <div>
-        <div className="text-center">
+        <div className="container text-center">
+
           <h1>Private Area</h1>
         </div>
       </div>
-      <div>
+      <div className="container text-center">
         <button
-          className="btn btn-primary col-4"
+          className="btn btn-primary col-2 mt-5"
           onClick={() => {
             localStorage.removeItem("token");
             history.push("/");
