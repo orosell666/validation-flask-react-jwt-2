@@ -60,6 +60,22 @@ def signup():
     }
     return jsonify((data_response)), 200
 
+@api.route('/private', methods=['GET'])
+def private():
+    name = request.json.get('name')
+    last_name = request.json.get('lastName')
+
+    user = User ( name = name , last_name = last_name)
+
+    data_response= {
+        "email": user.email,
+        "password": user.password,
+        "name": user.name,
+        "last_name": user.last_name
+    }
+
+    return jsonify(data_response), 200
+
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
 

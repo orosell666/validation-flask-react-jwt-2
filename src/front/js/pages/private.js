@@ -12,10 +12,12 @@ export const Private = () => {
   });
 
   return (
+
     <div>
       <div>
         <div className="container text-center">
 
+          <h1>Hello, This is your</h1>
           <h1>Private Area</h1>
         </div>
       </div>

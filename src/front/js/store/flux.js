@@ -38,7 +38,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(data => setStore({ datosUsuario: data }))
 					.catch(error => console.log("Error loading message from backend", error));
-			}
+			},
+
+
 
 		}
 	};
