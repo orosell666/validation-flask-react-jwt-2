@@ -56,11 +56,13 @@ const Login = () => {
         </button>
 
         {store.respuesta.message ? <div className={`alert alert-${store.respuesta.color}`} role="alert">
-          <h4 className="alert-heading col">Well done!</h4>
-          <p>el email es: {store.respuesta.email}</p>
+          <h4 className="alert-heading col">Well done {store.respuesta.name}!</h4>
+          <p>You can access to you private area</p>
+          <p>by clicking  submit button again!</p>
           <hr />
           <p className="mb-0">{store.respuesta.message}</p>
         </div>
+
           : ""}
 
 

@@ -31,7 +31,7 @@ def login():
         "email": user.email,
         "userID": user.id,
         "name": user.name,
-        "message": "conseguido!",
+        "message": "success!",
         "color": "success"
     }
     return jsonify ({ 
@@ -40,7 +40,7 @@ def login():
         "email": user.email,
         "userID": user.id,
         "name": user.name,
-        "message": "conseguido!",
+        "message": "success!",
         "color": "success"
         }), 200
 
