@@ -25,6 +25,7 @@ export const Private = () => {
 
           <h1>Hello  {store.respuesta.name}, This is your</h1>
           <h1>Private Area</h1>
+          <img className="img-fluid gifsize" src="https://coolmaterial.com/wp-content/uploads/2013/02/dots.gif"></img>
         </div>
       </div>
       <div className="container text-center">
