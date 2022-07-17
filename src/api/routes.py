@@ -17,6 +17,7 @@ def login():
     print("@@@@@@@@@@@@@@@@@@ llega aqui")
     print(email)
     print(password)
+   
     user = User.query.filter_by(email=email, password=password).first()
     if not user:
         return jsonify({"message":"El usuario no fue encontrado",
@@ -24,19 +25,20 @@ def login():
     
     token = create_access_token(identity=user.id)
 
-    #data_response = {
-     #   "status": True,
-     #   "token": token,
-     #   "email": user.email,
-     #   "userID": user.id,
-     #   "message": "conseguido!",
-     #   "color": "success"
-    #}
+    data_response = {
+        "status": True,
+        "token": token,
+        "email": user.email,
+        "userID": user.id,
+        "message": "conseguido!",
+        "color": "success"
+    }
     return jsonify ({ 
         "status": True,
         "token": token,
         "email": user.email,
         "userID": user.id,
+       
         "message": "conseguido!",
         "color": "success"
         }), 200
@@ -60,31 +62,9 @@ def signup():
     }
     return jsonify((data_response)), 200
 
-@api.route('/private', methods=['GET'])
-def private():
-    name = request.json.get('name')
-    last_name = request.json.get('lastName')
 
-    user = User ( name = name , last_name = last_name)
 
-    data_response= {
-        "email": user.email,
-        "password": user.password,
-        "name": user.name,
-        "last_name": user.last_name
-    }
 
-    return jsonify(data_response), 200
-
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
-    
 # añadir usuario
 
 #@api.route('/user', methods=['POST'])

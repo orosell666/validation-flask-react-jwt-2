@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			respuesta: {},
+			user: {},
 
 		},
 
@@ -39,6 +40,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ datosUsuario: data }))
 					.catch(error => console.log("Error loading message from backend", error));
 			},
+
+			cargarUser: (user) => {
+				fetch(process.env.BACKEND_URL + "/api/private", {
+					method: "GET",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(user),
+				})
+					.then(res => res.json())
+					.then(data => setStore({ datosUsuario: data }))
+					.catch(error => console.log("Error loading message from backend", error));
+			}
 
 
 

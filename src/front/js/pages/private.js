@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
@@ -6,18 +6,24 @@ import "../../styles/home.css";
 export const Private = () => {
   const { store, actions } = useContext(Context);
   let history = useHistory();
+  const [user, setUser] = useState({})
   useEffect(() => {
     let token = localStorage.getItem("token");
+    actions.cargarUser(localStorage.getItem("user.id"));
+
 
   });
 
+
   return (
+
+
 
     <div>
       <div>
         <div className="container text-center">
 
-          <h1>Hello, This is your</h1>
+          <h1>Hello, {store.user.name} This is your</h1>
           <h1>Private Area</h1>
         </div>
       </div>
@@ -35,4 +41,4 @@ export const Private = () => {
     </div>
   );
 };
-// para log out tengo que meter un onclick y dentro: localstorage.removeItem("token")=> luego usar linea 11 (hisotry push) para redireccionarme a login
+
