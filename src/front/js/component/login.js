@@ -24,7 +24,7 @@ const Login = () => {
         <div >
           <label htmlFor="formGroupExampleInput" className="form-label text">Email</label><br />
           <input
-            className="col-2"
+            className="col-4"
             autoFocus
             type="email"
             value={email}
@@ -35,7 +35,7 @@ const Login = () => {
         <div className="form-group ">
           <label htmlFor="formGroupExampleInput" className="form-label text mt-2">Password</label><br />
           <input
-            className="col-2"
+            className="col-4"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
