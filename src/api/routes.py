@@ -30,6 +30,7 @@ def login():
         "token": token,
         "email": user.email,
         "userID": user.id,
+        "name": user.name,
         "message": "conseguido!",
         "color": "success"
     }
@@ -38,7 +39,7 @@ def login():
         "token": token,
         "email": user.email,
         "userID": user.id,
-       
+        "name": user.name,
         "message": "conseguido!",
         "color": "success"
         }), 200

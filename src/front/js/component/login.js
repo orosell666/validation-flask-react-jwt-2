@@ -56,7 +56,7 @@ const Login = () => {
         </button>
 
         {store.respuesta.message ? <div className={`alert alert-${store.respuesta.color}`} role="alert">
-          <h4 className="alert-heading">Well done!</h4>
+          <h4 className="alert-heading col">Well done!</h4>
           <p>el email es: {store.respuesta.email}</p>
           <hr />
           <p className="mb-0">{store.respuesta.message}</p>

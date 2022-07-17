@@ -23,7 +23,7 @@ export const Private = () => {
       <div>
         <div className="container text-center">
 
-          <h1>Hello, {store.user.name} This is your</h1>
+          <h1>Hello  {store.respuesta.name}, This is your</h1>
           <h1>Private Area</h1>
         </div>
       </div>
