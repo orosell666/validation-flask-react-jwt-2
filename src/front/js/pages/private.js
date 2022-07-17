@@ -9,7 +9,7 @@ export const Private = () => {
   const [user, setUser] = useState({})
   useEffect(() => {
     let token = localStorage.getItem("token");
-    actions.cargarUser(localStorage.getItem("user.id"));
+
 
 
   });
